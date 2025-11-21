@@ -21,6 +21,7 @@ alter table post add constraint post_fk foreign key(author_id) references author
 -- on delete/on update 제약조건 변경 테스트 
 alter table post add constraint post_fk foreign key(author_id) references author(id) on delete set null on update cascade;
 
-기존 fk 삭제
-새로운 fk 추가
-새로운 fk에 맞는 테스트- 삭제 테스트 , 수정 테스트
+기존 fk 삭제 : alter table post drop foreign key fk명;
+새로운 fk 추가 : alter table post add constraint post_fk foreign key(author_id) references author(id) on delete set null on update cascade;
+새로운 fk에 맞는 테스트- 삭제 테스트 , 수정 테스트 : select *from author; -> 삭제 후 select *from post; -> null로 변경 되었는지 확인 
+                                                                    -> 수정후                     -> 똑같이 수정 되었는지 확인 
