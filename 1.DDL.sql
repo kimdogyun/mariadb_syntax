@@ -79,7 +79,7 @@ alter table post modify column title varchar(255) not null;
 --테이블 삭제
 drop table abc;
 
---일련의 쿼리를 실행시킬떄 특정 쿼리에서 에러가 나지 않도록 if exists를 많이 사용
+--일련의 쿼리를 실행시킬때 특정 쿼리에서 에러가 나지 않도록 if exists를 많이 사용
 drop table if exists abc;
 
 
