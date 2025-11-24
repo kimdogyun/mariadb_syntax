@@ -81,7 +81,7 @@ select * from author where name REGEXP '[가-힣]';--이름에 한글이 포함�
 select cast('12'as unsigned ); -- int 말고 unsigned 사용 
 --숫자 ->날짜
 select cast (20251121 as date);--2025-11-21
---문 ->날짜
+--문자 ->날짜
 select cast ('20251121' as date); --2025-11-21
 
 --날짜타입변환 - date_format(Y,m,d,H,i,s)
