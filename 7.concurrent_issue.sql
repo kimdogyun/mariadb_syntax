@@ -46,7 +46,7 @@ begin
 end //
 DELIMITER ;
 call concurrent_test2();
---터미널에서는 아래 코드 실행 햣
+--터미널에서는 아래 코드 실행 
 select post_count from author where id=1 for update;
 --seriallizable:모든 트랜잭션 순차적 실행 -> 동시성문제없음(성능저하)
 

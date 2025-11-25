@@ -13,6 +13,7 @@ alter table author add column post_count int default 0;
 start transaction;
 update author set post_count=post_count+1 where id=3;
 insert into post(title, contents,author_id)values('hello','helloworld...',3);
+commit;
 
 --위 트랜잭션은 실패시 자동으로 rollback이 어려움.
 --stored 프로시저를 활용하여 성공시에는 commit, 실패시에는 rollback 등 동적인 프로그래밍
@@ -35,3 +36,6 @@ call transaction_test();
 
 datebase 멀티스레드 프로그램 동시에 여러 사용자가 작업 가능
 =>동시성 문제 발생
+=>격리 수준 - Repeatable Read  (mariadb)
+=>lost update
+=>배타락-selet for update 으로 해결
